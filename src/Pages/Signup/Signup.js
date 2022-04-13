@@ -26,6 +26,7 @@ const ui = (
 function RegisterUser(values) {
   const userDetails = values;
   console.log(userDetails);
+  // make post call 
 }
 
 const Signup = () => {

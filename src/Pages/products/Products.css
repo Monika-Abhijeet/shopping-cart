@@ -1,0 +1,17 @@
+.card {
+  width: 300px;
+  height: 300px;
+  float: left;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.product-desc {
+  color: rgb(47, 0, 255);
+}
+
+.btn-cart {
+  margin-bottom: 10px;
+}

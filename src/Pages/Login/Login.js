@@ -10,28 +10,37 @@ const Login = () => {
   const [user, setUser] = useState("Monika");
   const [pwd, setPwd] = useState("Monika123");
 
-  function login() {
-    let isLogged = checkIfUserIsValid();
-    if (isLogged) {
-      console.log("m here");
+  // async function login() {
+  //   let isLogged = await checkIfUserIsValid();
+  //   console.log(isLogged);
+  //   if (isLogged) {
+  //     console.log("m here");
+  //     navigate("/home");
+  //   } else {
+  //     navigate("/failure");
+  //     console.log("something went wrong");
+  //   }
+  // }
+
+  async function login(e) {
+    e.preventDefault();
+    console.log("here");
+    let requestBody = {
+      name: username,
+      username: password,
+    };
+    console.log("m user");
+    try {
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/uers",
+        requestBody
+      );
       navigate("/home");
-    } else {
-      navigate("/failure");
-      console.log("something went wrong");
+    } catch {
+      navigate("/home");
     }
   }
 
-  function checkIfUserIsValid() {
-    let requestBody = {
-      username: username,
-      password: password,
-    };
-    // axios.post('xsnnxksxx',requestBody).then((res) => {
-
-    // })
-    if (username === user && password === pwd) return true;
-    else return false;
-  }
   return (
     <div>
       <h1>Login</h1>
